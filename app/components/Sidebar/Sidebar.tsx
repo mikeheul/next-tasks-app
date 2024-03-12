@@ -6,10 +6,17 @@ import Image from 'next/image';
 
 import menu from "@/app/utils/menu"
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 const Sidebar = () => {
 
   const { theme } = useGlobalState();
+
+  const router = useRouter();
+
+  const handleClient = (link:string) => {
+    router.push(link)
+  };
 
   return (
     <SidebarStyled theme={ theme }>
