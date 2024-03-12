@@ -14,7 +14,11 @@ const Sidebar = () => {
 
 // props.theme.sidebarWidth from themes.js
 const SidebarStyled = styled.nav`
-    width: ${(props) => props.theme.sidebarWidth}
+    position: relative;
+    width: ${(props) => props.theme.sidebarWidth};
+    background-color: ${(props) => props.theme.colorBg2};
+    border-right: 2px solid ${(props) => props.theme.borderColor2};
+    border-radius: 1rem;
 `;
 
 export default Sidebar
