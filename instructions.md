@@ -2,6 +2,9 @@
 
 ## Instructions 
 
+https://www.youtube.com/watch?v=OHvfgaDl-yY&ab_channel=freeCodeCamp.org
+56:58
+
 - Install vscode-styled-components
 
 - Create a new project (TypeScript, TailWindCSS and App Router)
