@@ -5,15 +5,16 @@ import { useGlobalState } from "@/app/context/globalProvider"
 
 const Sidebar = () => {
 
-  const context = useGlobalState();
+  const { theme } = useGlobalState();
 
   return (
-    <SidebarStyled>Sidebar</SidebarStyled>
+    <SidebarStyled theme={ theme }>Sidebar</SidebarStyled>
   )
 }
 
+// props.theme.sidebarWidth from themes.js
 const SidebarStyled = styled.nav`
-    
+    width: ${(props) => props.theme.sidebarWidth}
 `;
 
 export default Sidebar

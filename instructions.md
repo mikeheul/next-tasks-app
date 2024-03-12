@@ -393,11 +393,13 @@ const Sidebar = () => {
 }
 
 const SidebarStyled = styled.nav`
-    
+    width: ${(props) => props.theme.sidebarWidth}
 `;
 
 export default Sidebar
 ```
+
+
 
 
 
