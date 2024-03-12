@@ -480,7 +480,33 @@ export const mailIcon = <i className="fa-solid fa-envelope"></i>;
 export const plus = <i className="fa-solid fa-plus fa-beat-fade"></i>;
 ```
 
-
+- Add Fontawesome CDN in layout.tsx
+``` javascript
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="en">
+      <head>
+      <link 
+        rel="stylesheet" 
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" 
+        crossOrigin="anonymous" referrerPolicy="no-referrer" />
+      </head>
+      <body className={inter.className}>
+        <ContextProvider>
+          <GlobalStyleProvider>
+            <Sidebar />
+            {children}
+          </GlobalStyleProvider>
+        </ContextProvider>
+      </body>
+    </html>
+  );
+}
+```
 
 
 
