@@ -323,7 +323,7 @@ export const GlobalProvider = ({ children }) => {
         <GlobalContext.Provider value={{
             theme, 
         }}>
-            <GlobalUpdateContext.Provider value={setGlobalState}>
+            <GlobalUpdateContext.Provider value={{}}>
                 {children}
             </GlobalUpdateContext.Provider>
         </GlobalContext.Provider>
@@ -335,19 +335,69 @@ export const GlobalProvider = ({ children }) => {
 ``` javascript
 "use client";
 import React from 'react'
-import GlobalStyleProvider from './GlobalStyleProvider';
+import { GlobalProvider } from '../context/globalProvider';
 
 interface Props {
     children: React.ReactNode;
 }
 
 const ContextProvider = ({ children }: Props) => {
-  return <GlobalStyleProvider>{children}</GlobalStyleProvider>
+  return <GlobalProvider>{children}</GlobalProvider>
 }
 
 export default ContextProvider
 ```
 
+- In layout.tsx
+``` javascript
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="en">
+      <body className={inter.className}>
+        <ContextProvider>
+          <GlobalStyleProvider>
+            <Sidebar />
+            {children}
+          </GlobalStyleProvider>
+        </ContextProvider>
+      </body>
+    </html>
+  );
+}
+```
+
+- In globalProvider.js, add this at the end :
+``` javascript
+export const useGlobalState = () => useContext(GlobalContext)
+export const useGlobalUpdate = () => useContext(GlobalUpdateContext)
+```
+
+- In Sidebar component
+``` javascript
+"use client";
+import React from 'react'
+import styled from 'styled-components';
+import { useGlobalState } from "@/app/context/globalProvider"
+
+const Sidebar = () => {
+
+  const { theme } = useGlobalState();
+
+  return (
+    <SidebarStyled>Sidebar</SidebarStyled>
+  )
+}
+
+const SidebarStyled = styled.nav`
+    
+`;
+
+export default Sidebar
+```
 
 
 
