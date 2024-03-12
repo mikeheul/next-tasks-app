@@ -2,6 +2,8 @@
 
 ## Instructions 
 
+- Install vscode-styled-components
+
 - Create a new project (TypeScript, TailWindCSS and App Router)
 ``` properties
 npx create-next-app@latest next-tasks-app
@@ -507,6 +509,10 @@ export default function RootLayout({
   );
 }
 ```
+
+- Update SideBar style (cf Sidebar component)
+
+
 
 
 

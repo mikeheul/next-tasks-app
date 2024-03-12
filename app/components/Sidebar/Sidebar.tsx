@@ -54,7 +54,7 @@ const Sidebar = () => {
   )
 }
 
-// props.theme.sidebarWidth from themes.js
+// props.theme from themes.js
 const SidebarStyled = styled.nav`
     position: relative;
     width: ${(props) => props.theme.sidebarWidth};
@@ -91,6 +91,50 @@ const SidebarStyled = styled.nav`
       border-radius: 1rem;
       border: 2px solid ${(props) => props.theme.borderColor2};
       opacity: 0.2;
+    }
+
+    h1 {
+      font-size: 1.2rem;
+      display: flex;
+      flex-direction: column;
+      line-height: 1.4rem;
+    }
+
+    .image, h1 {
+      position: relative;
+      z-index: 1;
+    }
+
+    .image {
+      flex-shrink: 0;
+      display: inline-block;
+      overflow: hidden;
+      transition: all 0.5s ease;
+      border-radius: 50%;
+      width: 70px;
+      height: 70px;
+
+      img {
+        border-radius: 100%;
+        transition: all 0.5s ease;
+      }
+    }
+
+    > h1 {
+      margin-left: 0.8;
+      font-size: clamp(1.2rem, 4vw, 1.4rem);
+      line-height: 100%;
+    }
+
+    .profile:hover {
+      .profile-overlay {
+        opacity: 1;
+        border: 2px solid ${(props) => props.theme.borderColor2};
+      }
+
+      img {
+        transform: scale(1.1)
+      }
     }
 `;
 
