@@ -342,6 +342,18 @@ interface Props {
 }
 
 const ContextProvider = ({ children }: Props) => {
+
+  const [isReady, setIsReady] = React.useState(false);
+  React.useEffect(() => {
+    setTimeout(() => {
+        setIsReady(true);
+    }, 200);
+  }, []);
+
+  if(!isReady) {
+    return null;
+  }
+
   return <GlobalProvider>{children}</GlobalProvider>
 }
 
@@ -393,7 +405,11 @@ const Sidebar = () => {
 }
 
 const SidebarStyled = styled.nav`
-    width: ${(props) => props.theme.sidebarWidth}
+    position: relative;
+    width: ${(props) => props.theme.sidebarWidth};
+    background-color: ${(props) => props.theme.colorBg2};
+    border: 2px solid ${(props) => props.theme.borderColor2};
+    border-radius: 1rem;
 `;
 
 export default Sidebar
