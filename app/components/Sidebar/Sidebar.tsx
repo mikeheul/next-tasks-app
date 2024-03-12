@@ -12,8 +12,17 @@ const Sidebar = () => {
     <SidebarStyled theme={ theme }>
       <div className="profile">
         <div className="profile-overlay"></div>
-        <Image width={70} height={70} src="/avatar1.png" alt="profile" />
+        <div className="image">
+          <Image width={70} height={70} src="/avatar1.png" alt="profile" />
+        </div>
+        <h1>
+          <span>Micka</span>
+          <span>Murmann</span>
+        </h1>
       </div>
+      <ul className="nav-items">
+        
+      </ul>
     </SidebarStyled>
   )
 }
