@@ -517,6 +517,33 @@ export default function RootLayout({
 
 - Create folders "completed", "important" and "incomplete" in app/ and create "page.tsx" (rafce). Now, we can click on navbar item to display page content !
 
+- In layout.tsx, add a "w-full" div and include {children} inside it.
+``` javascript
+<ContextProvider>
+  <GlobalStyleProvider>
+    <Sidebar />
+    <div className="w-full">
+      {children}
+    </div>
+  </GlobalStyleProvider>
+</ContextProvider>
+```
+
+- Create a new Component "Tasks" in components folder
+
+- Add <Tasks /> component to main page.tsx file (next to layout.tsx)
+``` javascript
+import Image from "next/image";
+import Tasks from "./components/Tasks/Tasks";
+
+export default function Home() {
+  return (
+    <main>
+      <Tasks />
+    </main>
+  );
+}
+```  
 
 
 
