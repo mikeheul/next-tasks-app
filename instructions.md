@@ -513,7 +513,9 @@ export default function RootLayout({
 }
 ```
 
-- Update SideBar style (cf Sidebar component)
+- Update SideBar style (cf CSS Sidebar component)
+
+
 
 
 
