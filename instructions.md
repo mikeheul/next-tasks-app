@@ -515,6 +515,8 @@ export default function RootLayout({
 
 - Update SideBar style (cf CSS Sidebar component)
 
+- Create folders "completed", "important" and "incomplete" in app/ and create "page.tsx" (rafce). Now, we can click on navbar item to display page content !
+
 
 
 
